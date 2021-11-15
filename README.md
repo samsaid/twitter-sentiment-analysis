@@ -1,8 +1,7 @@
 # twitter-sentiment-analysis
 
+[nltk toolkit](https://www.nltk.org/index.html)
 
-###### nltk toolkit
-[nltk toolkit](https://duckduckgo.com)
 mac command line install:
 ```
 pip3 install --user -U nltk
