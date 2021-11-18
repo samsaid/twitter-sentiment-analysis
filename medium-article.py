@@ -1,3 +1,7 @@
+# hello team
+# this file is the code from the medium article: https://towardsdatascience.com/step-by-step-twitter-sentiment-analysis-in-python-d6f650ade58d
+# note: twitter API has a limit on requests sent not sure exactly what but 2500 requests in <15 minutes breaks it
+
 # Import Librariesfrom textblob import TextBlob
 from textblob import TextBlob
 import sys

@@ -1,10 +1,10 @@
 # twitter-sentiment-analysis
 
-[nltk toolkit](https://www.nltk.org/index.html)
+## Dependencies
+Install the following on your computer not project folder (you might need more than this...check the imports)
 
-install these in command line to test sentiment-analysis-test file: (you might need more than this)
 ```
-pip3 install --user -U nltk
+!pip install nltk
 !pip install textblob
 !pip install tweepy
 ```

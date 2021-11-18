@@ -1,20 +1,17 @@
-import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.corpus import twitter_samples
+import tweepy
 
-from nltk.corpus import twitter_samples
+#twitter authentication
+consumerKey = "Vso4pXzrTWwxllELi0TNyFl9C"
+consumerSecret = "N7UdKUStEG0URQm2LkapdVewNdwuEhAwbyqFxFz986Qy9XyQTI"
+accessToken = "1459733764402122755-BlMhCdaq1hCW2vcdc1ymbZCSexkPvy"
+accessTokenSecret = "yZ2SaqL3hellFxYnZzQ3S6nMmwap0ohDWrwIjcECJkD31"
+auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
+auth.set_access_token(accessToken, accessTokenSecret)
+api = tweepy.API(auth)
 
-pos_tweets = twitter_samples.strings('positive_tweets.json')
-neg_tweets = twitter_samples.strings('negative_tweets.json')
-text = twitter_samples.strings('tweets.20150430-223406.json')
+keyword = "trump"
+noOfTweet = 5
+tweets = tweepy.Cursor(api.search_tweets, q=keyword, lang="en").items(noOfTweet)
 
-print(text)
-#this would be a document or tweet
-neg_sentence = "today SUX!!"
-pos_sentence = "im so HAPPY!!!"
-sid = SentimentIntensityAnalyzer()
-neg_ss = sid.polarity_scores(neg_sentence)
-pos_ss = sid.polarity_scores(pos_sentence)
-
-#print('positive sentence score: ', pos_ss)
-#print('negative sentence score: ', neg_ss)
+for tweet in tweets:
+    print(tweet.text)
