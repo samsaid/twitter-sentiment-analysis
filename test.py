@@ -8,7 +8,7 @@ pos_tweets = twitter_samples.strings('positive_tweets.json')
 neg_tweets = twitter_samples.strings('negative_tweets.json')
 text = twitter_samples.strings('tweets.20150430-223406.json')
 
-print(pos_tweets)
+print(text)
 #this would be a document or tweet
 neg_sentence = "today SUX!!"
 pos_sentence = "im so HAPPY!!!"
