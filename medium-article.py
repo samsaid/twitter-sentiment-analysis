@@ -1,4 +1,3 @@
-# hello team
 # this file is the code from the medium article: https://towardsdatascience.com/step-by-step-twitter-sentiment-analysis-in-python-d6f650ade58d
 # note: twitter API has a limit on requests sent not sure exactly what but 2500 requests in <15 minutes breaks it
 
@@ -39,8 +38,9 @@ def percentage(part,whole):
 
 noOfTweet = int(input ("Please enter how many tweets to analyze: "))
 
-#tweets = tweepy.Cursor(api.search_tweets, q=keyword, lang="en").items(noOfTweet)
-tweets = tweepy.Cursor(api.search_tweets, q='vaccine -filter:retweets -filter:replies', lang="en", tweet_mode = 'extended').items(noOfTweet)
+lastTweetId = 11/20/21
+#add since_id = lastTweetId) in parameter if want to do specific date to recent 
+tweets = tweepy.Cursor(api.search_tweets, q='vaccine -filter:retweets -filter:replies -filter:links', lang="en", tweet_mode = 'extended').items(noOfTweet)
 # First you get the tweets in a json object
 #tweets = [status._json for status in tweepy.Cursor(api.search_tweets, q=keyword, tweet_mode='extended', lang='en').items(noOfTweet)]
 
