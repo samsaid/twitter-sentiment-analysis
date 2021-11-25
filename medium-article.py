@@ -37,10 +37,14 @@ api = tweepy.API(auth)
 def percentage(part,whole):
     return 100 * float(part)/float(whole) 
 
-keyword = input("Please enter keyword or hashtag to search: ")
 noOfTweet = int(input ("Please enter how many tweets to analyze: "))
 
-tweets = tweepy.Cursor(api.search_tweets, q=keyword, lang="en").items(noOfTweet)
+#tweets = tweepy.Cursor(api.search_tweets, q=keyword, lang="en").items(noOfTweet)
+tweets = tweepy.Cursor(api.search_tweets, q='vaccine -filter:retweets', lang="en", tweet_mode = 'extended').items(noOfTweet)
+# First you get the tweets in a json object
+#tweets = [status._json for status in tweepy.Cursor(api.search_tweets, q=keyword, tweet_mode='extended', lang='en').items(noOfTweet)]
+
+# Now you can iterate over 'results' and store the complete message from each tweet.
 positive  = 0
 negative = 0
 neutral = 0
@@ -53,6 +57,7 @@ positive_list = []
 for tweet in tweets:
     
     #print(tweet.text)
+    tweet.text = tweet.full_text
     tweet_list.append(tweet.text)
     analysis = TextBlob(tweet.text)
     score = SentimentIntensityAnalyzer().polarity_scores(tweet.text)
@@ -61,18 +66,32 @@ for tweet in tweets:
     pos = score['pos']
     comp = score['compound']
     polarity += analysis.sentiment.polarity
+
+    print('\n')
+    print(tweet.user.screen_name)
+    print(tweet.text)
+    print('score: ', score)
     
     if neg > pos:
         negative_list.append(tweet.text)
         negative += 1
+        print('classification: negative')
 
     elif pos > neg:
         positive_list.append(tweet.text)
         positive += 1
+        print('classification: positive')
     
     elif pos == neg:
         neutral_list.append(tweet.text)
         neutral += 1
+        print('classification: nuetral')
+    
+    print('\n')
+    
+
+
+
 
 positive = percentage(positive, noOfTweet)
 negative = percentage(negative, noOfTweet)
