@@ -40,7 +40,7 @@ def percentage(part,whole):
 noOfTweet = int(input ("Please enter how many tweets to analyze: "))
 
 #tweets = tweepy.Cursor(api.search_tweets, q=keyword, lang="en").items(noOfTweet)
-tweets = tweepy.Cursor(api.search_tweets, q='vaccine -filter:retweets', lang="en", tweet_mode = 'extended').items(noOfTweet)
+tweets = tweepy.Cursor(api.search_tweets, q='vaccine -filter:retweets -filter:replies', lang="en", tweet_mode = 'extended').items(noOfTweet)
 # First you get the tweets in a json object
 #tweets = [status._json for status in tweepy.Cursor(api.search_tweets, q=keyword, tweet_mode='extended', lang='en').items(noOfTweet)]
 
