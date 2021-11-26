@@ -1,10 +1,9 @@
 # twitter-sentiment-analysis
+The objective of this project is to explore the accurcy of sentiment analysis on Tweets. 
 
-## Dependencies
-Install the following on your computer not project folder (you might need more than this...check the imports)
-
+## Project Dependencies
 ```
-!pip install nltk
-!pip install textblob
-!pip install tweepy
+pip install nltk
+pip install textblob
+pip install tweepy
 ```

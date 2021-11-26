@@ -1,4 +1,7 @@
 # note: twitter API has a limit on requests sent not sure exactly what but 2500 requests in <15 minutes breaks it
+#import api key from other file
+import apikey
+from apikey import *
 
 # Import Librariesfrom textblob import TextBlob
 from textblob import TextBlob
@@ -21,17 +24,11 @@ from nltk.stem import SnowballStemmer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import CountVectorizer
 
-#twitter authentication
-consumerKey = "Vso4pXzrTWwxllELi0TNyFl9C"
-consumerSecret = "N7UdKUStEG0URQm2LkapdVewNdwuEhAwbyqFxFz986Qy9XyQTI"
-accessToken = "1459733764402122755-BlMhCdaq1hCW2vcdc1ymbZCSexkPvy"
-accessTokenSecret = "yZ2SaqL3hellFxYnZzQ3S6nMmwap0ohDWrwIjcECJkD31"
 auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
 auth.set_access_token(accessToken, accessTokenSecret)
 api = tweepy.API(auth)
 
 #Sentiment Analysis
-
 def percentage(part,whole):
     return 100 * float(part)/float(whole) 
 
@@ -85,7 +82,7 @@ for tweet in tweets:
     elif pos == neg:
         neutral_list.append(tweet.text)
         neutral += 1
-        print('Classification: nuetral')
+        print('Classification: neutral')
     
     print('\n')
     print('-----------------------------')
