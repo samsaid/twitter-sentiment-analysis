@@ -85,9 +85,7 @@ for tweet in tweets:
         print('Classification: neutral')
     
     print('\n')
-    print('-----------------------------')
-    print('\n')
-    
+    print('-----------------------------')    
 
 
 positive = percentage(positive, noOfTweet)
