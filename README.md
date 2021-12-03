@@ -1,5 +1,5 @@
 # twitter-sentiment-analysis
-## CSE 408 Project - Twitter Sentiment Analysis of Tweets
+## CSE 408 Project
 This project was completed for CSE 408: Multimedia Information Systems at Arizona State University. The purpose of this project explore the accuracy of a sentiment analysis model when performed on tweets which have a 280 character limit.  
 
 The model implemented is developed in Python that performs sentiment analysis using the Natural Language Toolkit on real tweets. We begin by importing our Twitter API keys, the Natural Language Toolkit Sentiment Analysis Analyzer, and several numbers libraries which performs the calculations per tweet.
