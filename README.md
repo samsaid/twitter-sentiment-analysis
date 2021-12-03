@@ -8,7 +8,7 @@ The the sentiment categorization begins by first defining the list variable “t
 ```
 q='vaccine -filter:retweets -filter:replies -filter:links'
 ```  
-Adding the filters aims to reduce context ambiguity of replies and duplications of tweets seen in retweets. The keyword vaccine was selected due to the range of polarity available for the topic.
+Adding the filters aims to reduce context ambiguity of replies and duplications of tweets seen in retweets. The keyword vaccine was selected due to the range of sentiment polarity available for the topic.
 
 Upon collecting the tweets, the full text is then analyzed with the NLTK Sentiment Analysis Analyzer library. This library first preprocesses the text with removing all stop words, generates tokens, and compares the tokens to the pre-defined lexicon from Vader. The score generated returns a positive, neutral, and negative score which add up to 1 and a resulting compound score.
 
