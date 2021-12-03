@@ -18,7 +18,7 @@ Upon running two tests of 100 Tweets with the keyword "vaccine", we gathered the
 True:- Positive: 25, Negative: 67: Neutral: 22  
 False:- Positive: 33, Negative 18, Neutral: 34  
   
-Average character length length from the sample of 200 tweets: 138.1  
+Average character length from the sample of 200 tweets: 138.1  
 
 ### Discussion
 The model implemented in this repository based on our testing data has an average of 57.7% accuracy on tweets. Noted observations during analysis is that shorter Tweets with approximately 10 words or less were defaulted to the neutral classification which impacted the accuracy of the model.
