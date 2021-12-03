@@ -1,6 +1,6 @@
 # twitter-sentiment-analysis
-## CSE 408 Project
-This project was completed for CSE 408: Multimedia Information Systems at Arizona State University. The purpose of this project explore the accuracy of a sentiment analysis model when performed on Tweets which have a 280 character limit.  
+## CSE 408 Project - Twitter Sentiment Analysis of Tweets
+This project was completed for CSE 408: Multimedia Information Systems at Arizona State University. The purpose of this project explore the accuracy of a sentiment analysis model when performed on tweets which have a 280 character limit.  
 
 The model implemented is developed in Python that performs sentiment analysis using the Natural Language Toolkit on real tweets. We begin by importing our Twitter API keys, the Natural Language Toolkit Sentiment Analysis Analyzer, and several numbers libraries which performs the calculations per tweet.
 
@@ -12,7 +12,7 @@ Adding the filters aims to reduce context ambiguity of replies and duplications 
 
 Upon collecting the tweets, the full text is then analyzed with the NLTK Sentiment Analysis Analyzer library. This library first preprocesses the text with removing all stop words, generates tokens, and compares the tokens to the pre-defined lexicon from Vader. The score generated returns a positive, neutral, and negative score which add up to 1 and a resulting compound score.
 
-## Results
+### Results
 Upon running two tests of 100 Tweets with the keyword "vaccine", we gathered the following results on Tweet Classifications accuracy:  
 
 True:- Positive: 25, Negative: 67: Neutral: 22  
