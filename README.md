@@ -2,7 +2,7 @@
 ## About
 The purpose of this project is to explore the accuracy of sentiment analysis when performed on Tweets.  
 
-The model implemented is developed in python using several libraries, as noted in the imports of the file. The program imports the API keys generated with a Twitter account, the NLTK Sentiment Analysis Analyzer, and several numbers libraries which performs calculations per tweet.
+The model implemented is developed in python and imports the API keys generated with a Twitter account, the Natural Language Toolkit Sentiment Analysis Analyzer, and several numbers libraries which performs the calculations per tweet.
 
 We perform the categorization by first defining the list variable “tweets”, which is set equal to the Twitter search API call that searches for the most recent Tweets including the word “vaccine”. The API returns the most recent number of tweets requested, filtering out replies, links, and retweets. Upon collecting these tweets, the text is then analyzed with the NLTK Sentiment Analyzer library. This library first preprocesses the text with removing all stop words, generates tokens, and compares the tokens to the pre-defined lexicon from Vader. 
 
